@@ -20,7 +20,7 @@ export const DashboardMock = () => {
                 <div className="col-span-5 flex flex-col gap-4">
                     <div className="bg-[#1A1A1A]/80 p-4 rounded-xl border border-white/5 shadow-lg">
                         <div className="text-xs text-gray-400 mb-1">Total Balance</div>
-                        <div className="text-2xl max-[580px]:text-lg font-bold font-display">$34,809.89</div>
+                        <div className="text-2xl max-[580px]:text-lg max-[438px]:text-base max-[414px]:text-sm max-[404px]:text-xs font-bold font-display">$34,809.89</div>
                         <div className="h-24 flex items-end justify-between gap-1 mt-4 px-1">
                             {[30, 45, 25, 60, 40, 75, 50, 65, 35].map((h, i) => (
                                 <div key={i} className={`w-full rounded-t-sm ${i === 5 ? 'bg-brand-yellow' : 'bg-gray-700'}`} style={{ height: `${h}%` }}></div>
@@ -34,7 +34,7 @@ export const DashboardMock = () => {
                             { name: "Uber", cost: "-$14.20", icon: "U", bg: "bg-black" },
                             { name: "Spotify", cost: "-$12.99", icon: "S", bg: "bg-green-500" },
                         ].map((t, i) => (
-                            <div key={i} className="flex items-center justify-between text-xs">
+                            <div key={i} className="flex items-center justify-between text-xs max-[414px]:text-[10px]">
                                 <div className="flex items-center gap-2">
                                     <div className={`w-6 h-6 rounded ${t.bg} flex items-center justify-center font-bold text-[10px]`}>{t.icon}</div>
                                     <span>{t.name}</span>
