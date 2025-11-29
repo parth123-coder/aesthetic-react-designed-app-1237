@@ -29,7 +29,7 @@ const FeatureCardContent = ({ icon: Icon, title, desc, image, id }) => {
                     </motion.button>
                 </div>
             </div>
-            <div className="w-full md:w-1/2 relative min-h-[400px] md:min-h-full">
+            <div className="w-full md:w-1/2 relative min-h-[400px] max-[450px]:hidden md:min-h-full">
                 <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#141414] via-[#141414]/50"></div>
             </div>
@@ -126,7 +126,7 @@ export const GridFeatures = () => {
         <section className="py-24 bg-brand-dark overflow-hidden relative z-20">
             <div className="max-w-7xl mx-auto text-center px-6 mb-16">
                 <p className="text-brand-yellow font-bold text-sm mb-4 tracking-wider">MAIN FEATURES</p>
-                <h2 className="text-5xl md:text-7xl font-black font-display uppercase mb-12 max-w-5xl mx-auto leading-tight">
+                <h2 className="text-4xl md:text-6xl font-black font-display uppercase mb-12 max-w-5xl mx-auto leading-tight">
                     Made to make<br />everyday life easy<br />for everyone
                 </h2>
 

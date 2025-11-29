@@ -22,7 +22,7 @@ export const MultiToolSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-black font-display uppercase mb-8 leading-tight"
+                    className="text-4xl md:text-6xl font-black font-display uppercase mb-8 leading-tight"
                 >
                     Your multi-tool<br />for living
                 </motion.h2>

@@ -20,7 +20,7 @@ export const DashboardMock = () => {
                 <div className="col-span-5 flex flex-col gap-4">
                     <div className="bg-[#1A1A1A]/80 p-4 rounded-xl border border-white/5 shadow-lg">
                         <div className="text-xs text-gray-400 mb-1">Total Balance</div>
-                        <div className="text-2xl font-bold font-display">$34,809.89</div>
+                        <div className="text-2xl max-[580px]:text-lg font-bold font-display">$34,809.89</div>
                         <div className="h-24 flex items-end justify-between gap-1 mt-4 px-1">
                             {[30, 45, 25, 60, 40, 75, 50, 65, 35].map((h, i) => (
                                 <div key={i} className={`w-full rounded-t-sm ${i === 5 ? 'bg-brand-yellow' : 'bg-gray-700'}`} style={{ height: `${h}%` }}></div>
@@ -59,7 +59,7 @@ export const DashboardMock = () => {
                             </div>
                             <button className="w-full bg-white/10 text-white text-[10px] py-1.5 rounded hover:bg-white/20">Pay now</button>
                         </div>
-                        <div className="flex-1 space-y-2">
+                        <div className="flex-1 space-y-2 max-[450px]:hidden">
                             <div className="h-1/2 bg-[#1A1A1A]/80 rounded-xl border border-white/5 flex items-center justify-center">
                                 <Icons.Plane className="text-brand-yellow w-5 h-5" />
                             </div>
