@@ -3,30 +3,39 @@ import { motion } from 'framer-motion';
 import { ScrollStack } from './ScrollStack';
 import { ExpansionContext } from './FeatureModal';
 import { Icons } from './Icons';
+import { Reveal } from './Reveal';
 
 const FeatureCardContent = ({ icon: Icon, title, desc, image, id }) => {
     const { setActiveFeature } = useContext(ExpansionContext);
     return (
         <div className="flex flex-col md:flex-row h-full">
             <div className="w-full md:w-1/2 p-12 flex flex-col justify-center gap-6">
-                <div className="w-16 h-16 bg-brand-yellow/10 rounded-2xl flex items-center justify-center text-brand-yellow">
-                    <Icon className="w-8 h-8" />
-                </div>
-                <h2 className="text-4xl md:text-5xl font-display font-black leading-tight uppercase">
-                    {title}
-                </h2>
-                <p className="text-gray-400 text-lg leading-relaxed">
-                    {desc}
-                </p>
+                <Reveal>
+                    <div className="w-16 h-16 bg-brand-yellow/10 rounded-2xl flex items-center justify-center text-brand-yellow">
+                        <Icon className="w-8 h-8" />
+                    </div>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <h2 className="text-4xl md:text-5xl font-display font-black leading-tight uppercase">
+                        {title}
+                    </h2>
+                </Reveal>
+                <Reveal delay={0.2}>
+                    <p className="text-gray-400 text-lg leading-relaxed">
+                        {desc}
+                    </p>
+                </Reveal>
                 <div className="pt-4">
-                    <motion.button
-                        layoutId={`card-${id}`}
-                        onClick={() => setActiveFeature(id)}
-                        className="group flex items-center gap-2 text-white border border-white/20 px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all font-bold"
-                    >
-                        Learn more
-                        <span className="group-hover:translate-x-1 transition-transform"><Icons.ArrowRight /></span>
-                    </motion.button>
+                    <Reveal delay={0.3}>
+                        <motion.button
+                            layoutId={`card-${id}`}
+                            onClick={() => setActiveFeature(id)}
+                            className="group flex items-center gap-2 text-white border border-white/20 px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all font-bold"
+                        >
+                            Learn more
+                            <span className="group-hover:translate-x-1 transition-transform"><Icons.ArrowRight /></span>
+                        </motion.button>
+                    </Reveal>
                 </div>
             </div>
             <div className="w-full md:w-1/2 relative min-h-[400px] max-[450px]:hidden md:min-h-full">
@@ -72,10 +81,14 @@ export const FeatureStack = () => {
     return (
         <section className="px-6 py-20 bg-brand-dark relative z-10">
             <div className="text-center mb-10">
-                <p className="text-brand-yellow font-bold text-sm mb-4">FEATURES</p>
-                <h2 className="text-4xl md:text-6xl font-black font-display uppercase text-white">
-                    Everything you need
-                </h2>
+                <Reveal>
+                    <p className="text-brand-yellow font-bold text-sm mb-4">FEATURES</p>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <h2 className="text-4xl md:text-6xl font-black font-display uppercase text-white">
+                        Everything you need
+                    </h2>
+                </Reveal>
             </div>
 
             <ScrollStack>
@@ -125,16 +138,22 @@ export const GridFeatures = () => {
     return (
         <section className="py-24 bg-brand-dark overflow-hidden relative z-20">
             <div className="max-w-7xl mx-auto text-center px-6 mb-16">
-                <p className="text-brand-yellow font-bold text-sm mb-4 tracking-wider">MAIN FEATURES</p>
-                <h2 className="text-4xl md:text-6xl font-black font-display uppercase mb-12 max-w-5xl mx-auto leading-tight">
-                    Made to make<br />everyday life easy<br />for everyone
-                </h2>
+                <Reveal>
+                    <p className="text-brand-yellow font-bold text-sm mb-4 tracking-wider">MAIN FEATURES</p>
+                </Reveal>
+                <Reveal delay={0.1}>
+                    <h2 className="text-4xl md:text-6xl font-black font-display uppercase mb-12 max-w-5xl mx-auto leading-tight">
+                        Made to make<br />everyday life easy<br />for everyone
+                    </h2>
+                </Reveal>
 
-                <div className="flex justify-center">
-                    <button className="bg-brand-yellow text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-colors shadow-[0_0_20px_rgba(252,216,52,0.3)]">
-                        Start now
-                    </button>
-                </div>
+                <Reveal delay={0.2}>
+                    <div className="flex justify-center">
+                        <button className="bg-brand-yellow text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-colors shadow-[0_0_20px_rgba(252,216,52,0.3)]">
+                            Start now
+                        </button>
+                    </div>
+                </Reveal>
             </div>
 
             {/* Infinite Marquee Container */}
