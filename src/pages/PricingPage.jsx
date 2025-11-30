@@ -101,12 +101,12 @@ const PricingPage = ({ plans = pricingPlans, className }) => {
                 </h1>
             </div>
             {/* Pricing Container */}
-            <div className="relative container pt-28 md:pt-40">
+            <div className="relative container pt-28 md:pt-40 ">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     animate="show"
-                    className="relative z-10 flex flex-wrap md:flex-nowrap justify-center gap-8 mx-auto"
+                    className="relative z-10 flex flex-wrap lg:flex-nowrap justify-center gap-8 mx-auto w-screen"
                 >
                     {plans.map((plan) => (
                         <PricingCard
