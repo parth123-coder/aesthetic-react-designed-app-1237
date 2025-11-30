@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar, Footer } from './components/Layout';
 import LandingPage from './pages/LandingPage';
 import FeaturesPage from './pages/FeaturesPage';
+import PricingPage from './pages/PricingPage';
 import { FeatureModal, ExpansionContext } from './components/FeatureModal';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/features" element={<FeaturesPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
           </Routes>
           <Footer />
           <AnimatePresence>

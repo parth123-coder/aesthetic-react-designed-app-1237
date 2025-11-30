@@ -9,6 +9,17 @@
     --color-brand-card: #141414;
     --color-brand-gray: #2A2A2A;
 
+    /* Compatibility variables for Pricing Page */
+    --color-background: #0A0A0A;
+    --color-foreground: #FFFFFF;
+    --color-primary: #FCD834;
+    --color-primary-foreground: #000000;
+    --color-muted: #2A2A2A;
+    --color-muted-foreground: #A1A1AA;
+    --color-border: #333333;
+    --color-input: #333333;
+    --color-ring: #FCD834;
+
     --background-image-glass-gradient: linear-gradient(180deg, rgba(40, 40, 40, 0.7) 0%, rgba(10, 10, 10, 0.8) 100%);
 
     --animate-marquee: marquee 30s linear infinite;

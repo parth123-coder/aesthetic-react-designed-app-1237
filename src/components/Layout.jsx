@@ -22,7 +22,7 @@ export const Navbar = () => {
                 <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white">
                     <Link to="/" className="hover:text-gray-300 transition-colors">Products</Link>
                     <Link to="/features" className="hover:text-gray-300 transition-colors">Features</Link>
-                    <Link to="#" className="hover:text-gray-300 transition-colors">Plans</Link>
+                    <Link to="/pricing" className="hover:text-gray-300 transition-colors">Plans</Link>
                     <Link to="#" className="hover:text-gray-300 transition-colors">About</Link>
                 </div>
 
@@ -48,7 +48,7 @@ export const Navbar = () => {
                     <div className="flex flex-col items-center gap-12 text-4xl font-bold text-white">
                         <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Products</Link>
                         <Link to="/features" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Features</Link>
-                        <Link to="#" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Plans</Link>
+                        <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Plans</Link>
                         <Link to="#" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">About</Link>
                         <button onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Login</button>
                     </div>
