@@ -1,24 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Logo, Icons } from './Icons';
+import { Menu, X } from 'lucide-react';
 
 export const Navbar = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-transparent backdrop-blur-sm">
-            <div className="flex items-center gap-2">
-                <Logo />
-            </div>
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-                <a href="#" className="hover:text-white transition-colors">Products</a>
-                <a href="#" className="hover:text-white transition-colors">Features</a>
-                <a href="#" className="hover:text-white transition-colors">Plans</a>
-                <a href="#" className="hover:text-white transition-colors">About</a>
-            </div>
-            <div className="flex items-center gap-4">
-                <button className="text-sm font-medium text-white hover:text-gray-300 hidden sm:block">Login</button>
-                <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors">
-                    Start now
+        <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+            {/* Background Blur Layer */}
+            <div className="absolute inset-0 bg-transparent backdrop-blur-sm -z-10"></div>
+
+            <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 relative z-50">
+                    <Link to="/">
+                        <Logo color="white" />
+                    </Link>
+                </div>
+
+                {/* Desktop Menu */}
+                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white">
+                    <Link to="/" className="hover:text-gray-300 transition-colors">Products</Link>
+                    <Link to="/features" className="hover:text-gray-300 transition-colors">Features</Link>
+                    <Link to="#" className="hover:text-gray-300 transition-colors">Plans</Link>
+                    <Link to="#" className="hover:text-gray-300 transition-colors">About</Link>
+                </div>
+
+                <div className="hidden md:flex items-center gap-4">
+                    <button className="text-sm font-medium text-white hover:text-gray-300 hidden sm:block">Login</button>
+                    <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors">
+                        Start now
+                    </button>
+                </div>
+
+                {/* Mobile Menu Toggle */}
+                <button
+                    className="md:hidden text-white relative z-50"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
             </div>
+
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center p-8 md:hidden h-screen w-screen">
+                    <div className="flex flex-col items-center gap-12 text-4xl font-bold text-white">
+                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Products</Link>
+                        <Link to="/features" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Features</Link>
+                        <Link to="#" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Plans</Link>
+                        <Link to="#" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">About</Link>
+                        <button onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Login</button>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };

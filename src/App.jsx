@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar, Footer } from './components/Layout';
-import { Hero } from './components/Hero';
-import { FeatureStack, GridFeatures } from './components/Features';
-import { Testimonials } from './components/Testimonials';
-import { MultiToolSection } from './components/MultiToolSection';
-import { FAQ } from './components/FAQ';
+import LandingPage from './pages/LandingPage';
+import FeaturesPage from './pages/FeaturesPage';
 import { FeatureModal, ExpansionContext } from './components/FeatureModal';
 
 const App = () => {
@@ -13,19 +11,19 @@ const App = () => {
 
   return (
     <ExpansionContext.Provider value={{ activeFeature, setActiveFeature }}>
-      <div className="antialiased text-white bg-black">
-        <Navbar />
-        <Hero />
-        <FeatureStack />
-        <GridFeatures />
-        <Testimonials />
-        <MultiToolSection />
-        <FAQ />
-        <Footer />
-        <AnimatePresence>
-          {activeFeature && <FeatureModal />}
-        </AnimatePresence>
-      </div>
+      <Router>
+        <div className="antialiased text-white bg-black">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/features" element={<FeaturesPage />} />
+          </Routes>
+          <Footer />
+          <AnimatePresence>
+            {activeFeature && <FeatureModal />}
+          </AnimatePresence>
+        </div>
+      </Router>
     </ExpansionContext.Provider>
   );
 };
