@@ -27,7 +27,7 @@ export const Navbar = () => {
                 </div>
 
                 <div className="hidden md:flex items-center gap-4">
-                    <button className="text-sm font-medium text-white hover:text-gray-300 hidden sm:block">Login</button>
+                    <Link to="/login" className="text-sm font-medium text-white hover:text-gray-300 hidden sm:block">Login</Link>
                     <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors">
                         Start now
                     </button>
@@ -50,7 +50,7 @@ export const Navbar = () => {
                         <Link to="/features" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Features</Link>
                         <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Plans</Link>
                         <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">About</Link>
-                        <button onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Login</button>
+                        <Link to="/login" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Login</Link>
                     </div>
                 </div>
             )}
