@@ -5,6 +5,7 @@ import { Navbar, Footer } from './components/Layout';
 import LandingPage from './pages/LandingPage';
 import FeaturesPage from './pages/FeaturesPage';
 import PricingPage from './pages/PricingPage';
+import AboutPage from './pages/AboutPage';
 import { FeatureModal, ExpansionContext } from './components/FeatureModal';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/" element={<LandingPage />} />
             <Route path="/features" element={<FeaturesPage />} />
             <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
           <Footer />
           <AnimatePresence>

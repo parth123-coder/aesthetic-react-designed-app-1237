@@ -23,7 +23,7 @@ export const Navbar = () => {
                     <Link to="/" className="hover:text-gray-300 transition-colors">Products</Link>
                     <Link to="/features" className="hover:text-gray-300 transition-colors">Features</Link>
                     <Link to="/pricing" className="hover:text-gray-300 transition-colors">Plans</Link>
-                    <Link to="#" className="hover:text-gray-300 transition-colors">About</Link>
+                    <Link to="/about" className="hover:text-gray-300 transition-colors">About</Link>
                 </div>
 
                 <div className="hidden md:flex items-center gap-4">
@@ -49,7 +49,7 @@ export const Navbar = () => {
                         <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Products</Link>
                         <Link to="/features" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Features</Link>
                         <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Plans</Link>
-                        <Link to="#" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">About</Link>
+                        <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">About</Link>
                         <button onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Login</button>
                     </div>
                 </div>
@@ -113,7 +113,6 @@ export const Footer = () => {
                 </div>
 
                 <div className="mt-16 pt-8 border-t border-white/5 flex flex-wrap justify-center gap-6 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                    {/* Payment Logos Placeholder Text because external SVGs are messy */}
                     <span className="text-xl font-bold">VISA</span>
                     <span className="text-xl font-bold">MasterCard</span>
                     <span className="text-xl font-bold">PayPal</span>
@@ -124,3 +123,5 @@ export const Footer = () => {
         </footer>
     );
 };
+
+export default { Navbar, Footer };
