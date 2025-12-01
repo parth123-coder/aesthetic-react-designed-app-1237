@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar, Footer } from './components/Layout';
 import LandingPage from './pages/LandingPage';
+import ServicesPage from './pages/ServicesPage';
 import FeaturesPage from './pages/FeaturesPage';
 import PricingPage from './pages/PricingPage';
 import AboutPage from './pages/AboutPage';
@@ -18,6 +19,7 @@ const AppContent = ({ activeFeature, setActiveFeature }) => {
       {!isLoginPage && <Navbar />}
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/features" element={<FeaturesPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutPage />} />

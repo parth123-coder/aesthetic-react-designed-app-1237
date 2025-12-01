@@ -11,7 +11,7 @@ export const Navbar = () => {
             {/* Background Blur Layer */}
             <div className="absolute inset-0 bg-transparent backdrop-blur-sm -z-10"></div>
 
-            <div className="flex items-center justify-between">
+            <div className="relative flex items-center justify-between">
                 <div className="flex items-center gap-2 relative z-50">
                     <Link to="/">
                         <Logo color="white" />
@@ -19,8 +19,8 @@ export const Navbar = () => {
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white">
-                    <Link to="/" className="hover:text-gray-300 transition-colors">Products</Link>
+                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white absolute left-1/2 -translate-x-1/2">
+                    <Link to="/services" className="hover:text-gray-300 transition-colors">Services</Link>
                     <Link to="/features" className="hover:text-gray-300 transition-colors">Features</Link>
                     <Link to="/pricing" className="hover:text-gray-300 transition-colors">Plans</Link>
                     <Link to="/about" className="hover:text-gray-300 transition-colors">About</Link>
@@ -46,7 +46,7 @@ export const Navbar = () => {
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center p-8 md:hidden h-screen w-screen">
                     <div className="flex flex-col items-center gap-12 text-4xl font-bold text-white">
-                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Products</Link>
+                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Services</Link>
                         <Link to="/features" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Features</Link>
                         <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Plans</Link>
                         <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">About</Link>
