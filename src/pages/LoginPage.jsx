@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Iridescence from '../components/Iridescence';
+
+// Define constants outside component to prevent re-renders
+const IRIDESCENCE_COLOR = [0.99, 0.85, 0.20];
+const IRIDESCENCE_SPEED = 0.5;
+const IRIDESCENCE_AMPLITUDE = 0.15;
 
 // Main Login Component
 export default function LoginPage() {
@@ -10,11 +15,12 @@ export default function LoginPage() {
     const [password, setPassword] = useState('');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log('Login attempt:', { email, password });
     };
 
-    const menuVariants = {
+    const menuVariants = useMemo(() => ({
         closed: {
             opacity: 0,
             scale: 0.95,
@@ -31,7 +37,7 @@ export default function LoginPage() {
                 ease: "easeOut"
             }
         }
-    };
+    }), []);
 
     return (
         <div className="flex h-screen w-full overflow-hidden relative">
@@ -39,6 +45,7 @@ export default function LoginPage() {
             <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="absolute top-8 right-8 z-50 p-2 text-white hover:text-brand-yellow transition-colors"
+                type="button"
             >
                 <div className="w-8 h-8 flex flex-col justify-center gap-1.5">
                     <motion.span
@@ -89,9 +96,9 @@ export default function LoginPage() {
             {/* Left Side - Animated Background */}
             <div className="relative w-full lg:w-1/2 bg-brand-yellow max-[825px]:hidden">
                 <Iridescence
-                    color={[0.99, 0.85, 0.20]}
-                    speed={0.5}
-                    amplitude={0.15}
+                    color={IRIDESCENCE_COLOR}
+                    speed={IRIDESCENCE_SPEED}
+                    amplitude={IRIDESCENCE_AMPLITUDE}
                     mouseReact={true}
                 />
 
@@ -167,7 +174,7 @@ export default function LoginPage() {
                     </div>
 
                     {/* Login Form */}
-                    <div className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-5">
                         <div>
                             <label className="block text-white text-sm font-medium mb-2">
                                 Email <span className="text-red-500">*</span>
@@ -186,7 +193,7 @@ export default function LoginPage() {
                                 <label className="block text-white text-sm font-medium">
                                     Password <span className="text-red-500">*</span>
                                 </label>
-                                <button className="text-sm text-brand-yellow hover:text-yellow-300">
+                                <button type="button" className="text-sm text-brand-yellow hover:text-yellow-300">
                                     Forgot password?
                                 </button>
                             </div>
@@ -199,6 +206,7 @@ export default function LoginPage() {
                                     className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow transition-colors"
                                 />
                                 <button
+                                    type="button"
                                     onClick={() => setShowPassword(!showPassword)}
                                     className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-300"
                                 >
@@ -217,12 +225,12 @@ export default function LoginPage() {
                         </div>
 
                         <button
-                            onClick={handleSubmit}
+                            type="submit"
                             className="w-full bg-brand-yellow hover:bg-yellow-300 text-black font-medium py-3 px-4 rounded-lg transition-colors"
                         >
                             Sign in
                         </button>
-                    </div>
+                    </form>
 
                     {/* Magic Link */}
                     <button className="w-full mt-4 flex items-center justify-center gap-2 text-brand-yellow hover:text-yellow-300 py-2 transition-colors">
