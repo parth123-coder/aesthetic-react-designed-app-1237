@@ -13,7 +13,7 @@ export const FAQ = () => {
     ];
 
     return (
-        <section className="py-20 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+        <section id="faq" className="py-20 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
             <div className="lg:w-1/3">
                 <h2 className="text-4xl font-black font-display uppercase mb-4">Got any<br />questions?</h2>
                 <p className="text-gray-400 mb-8">We can answer them</p>

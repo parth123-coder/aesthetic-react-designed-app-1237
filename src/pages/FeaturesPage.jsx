@@ -119,16 +119,25 @@ const FeatureCard = ({ title, desc, delay, variant = "default" }) => (
     </Reveal>
 );
 
-const AdvantageItem = ({ icon: Icon, title, desc, btnText, delay }) => (
+const AdvantageItem = ({ icon: Icon, title, desc, btnText, delay, link }) => (
     <Reveal delay={delay} className="bg-[#111] p-8 rounded-3xl shadow-lg border border-white/10 hover:border-brand-yellow transition-colors group">
         <div className="w-12 h-12 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
             <Icon className="text-brand-yellow" size={24} />
         </div>
         <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
         <p className="text-gray-400 text-sm mb-6 leading-relaxed">{desc}</p>
-        <button className="px-5 py-2 rounded-full border border-white/20 text-xs font-bold text-white hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-colors">
-            {btnText}
-        </button>
+        {link ? (
+            <Link
+                to={link}
+                className="inline-block px-5 py-2 rounded-full border border-white/20 text-xs font-bold text-white hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-colors"
+            >
+                {btnText}
+            </Link>
+        ) : (
+            <button className="px-5 py-2 rounded-full border border-white/20 text-xs font-bold text-white hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-colors">
+                {btnText}
+            </button>
+        )}
     </Reveal>
 );
 
@@ -247,6 +256,7 @@ const FeaturesPage = () => {
                             title="Smooth Start"
                             desc="Without a visit to the office, we will set up your brokerage account in 5 minutes."
                             btnText="Open an Account"
+                            link="/login"
                             delay={0}
                         />
                         <AdvantageItem
@@ -254,6 +264,7 @@ const FeaturesPage = () => {
                             title="24/7 Support"
                             desc="Our support team is always available to answer questions and resolve any issues."
                             btnText="Ask a Question"
+                            link="/#faq"
                             delay={100}
                         />
                         <AdvantageItem
@@ -261,6 +272,7 @@ const FeaturesPage = () => {
                             title="Low Commissions"
                             desc="We give you the best rate we can for any kind of transactions. No extra fees."
                             btnText="Explore Prices"
+                            link="/pricing"
                             delay={200}
                         />
                         <AdvantageItem

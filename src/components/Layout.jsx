@@ -46,7 +46,7 @@ export const Navbar = () => {
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center p-8 md:hidden h-screen w-screen">
                     <div className="flex flex-col items-center gap-12 text-4xl font-bold text-white">
-                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Services</Link>
+                        <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Services</Link>
                         <Link to="/features" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Features</Link>
                         <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">Plans</Link>
                         <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-gray-300 transition-colors">About</Link>

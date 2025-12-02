@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import { Navbar, Footer } from './components/Layout';
 import LandingPage from './pages/LandingPage';
 import ServicesPage from './pages/ServicesPage';
@@ -39,6 +40,7 @@ const App = () => {
   return (
     <ExpansionContext.Provider value={{ activeFeature, setActiveFeature }}>
       <Router>
+        <ScrollToTop />
         <AppContent activeFeature={activeFeature} setActiveFeature={setActiveFeature} />
       </Router>
     </ExpansionContext.Provider>

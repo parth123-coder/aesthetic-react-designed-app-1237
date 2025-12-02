@@ -76,6 +76,7 @@ export default function LoginPage() {
                         <nav className="flex flex-col p-2">
                             {[
                                 { name: 'Home', path: '/' },
+                                { name: 'Services', path: '/services' },
                                 { name: 'Features', path: '/features' },
                                 { name: 'Pricing', path: '/pricing' },
                                 { name: 'About', path: '/about' }
